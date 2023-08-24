@@ -1,0 +1,24 @@
+{
+  "name": "senac_query_exercises",
+  "version": "1.0.0",
+  "description": "This repository holds my senac query exercises",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YH1d3k12/Senac_Query_Exercises.git"
+  },
+  "author": "Djalma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YH1d3k12/Senac_Query_Exercises/issues"
+  },
+  "homepage": "https://github.com/YH1d3k12/Senac_Query_Exercises#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
