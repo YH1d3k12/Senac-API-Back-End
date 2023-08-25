@@ -1,4 +1,4 @@
-export function ConvertSecondsToTime(km)
+export function ConvertKilometers(km)
 {
     if (!isNaN(km))
     {

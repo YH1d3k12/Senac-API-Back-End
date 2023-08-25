@@ -8,6 +8,6 @@ export function ConvertSecondsToTime(seconds)
         let minutes = Math.floor(seconds / 60);
         seconds -= minutes * 60;
         
-        return `Hours: ${hours} Minutes: ${minutes} Seconds: ${seconds}`;
+        return `${hours} Hour(s) ${minutes} Minute(s) ${seconds} Second(s)`;
     }
 }

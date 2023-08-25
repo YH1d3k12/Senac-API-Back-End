@@ -1,4 +1,4 @@
-export function ConvertSecondsToTime(number)
+export function CreateMultiplicationTable(number)
 {
     if (!isNaN(number))
     {
