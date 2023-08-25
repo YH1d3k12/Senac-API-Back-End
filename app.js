@@ -1,12 +1,12 @@
-import express, { request } from 'express'; // Import the Express library
-import exercise1 from './routes/exercise1.js';
-import exercise2 from './routes/exercise2.js';
-import exercise3 from './routes/exercise3.js';
-import exercise4 from './routes/exercise4.js';
-import exercise5 from './routes/exercise5.js';
-import exercise6 from './routes/exercise6.js';
-import exercise7 from './routes/exercise7.js';
-import exercise8 from './routes/exercise8.js';
+const express = require('express'); // Import the Express library
+const exercise1 = require('./routes/exercise1.js');
+const exercise2 = require('./routes/exercise2.js');
+const exercise3 = require('./routes/exercise3.js');
+const exercise4 = require('./routes/exercise4.js');
+const exercise5 = require('./routes/exercise5.js');
+const exercise6 = require('./routes/exercise6.js');
+const exercise7 = require('./routes/exercise7.js');
+const exercise8 = require('./routes/exercise8.js');
 
 const app = express(); // Create an instance of an Express application
 const PORT = process.env.PORT || 3000; // Choose a port for your server

@@ -1,4 +1,4 @@
-export function ConvertKilometers(km)
+function ConvertKilometers(km)
 {
     if (!isNaN(km))
     {
@@ -8,3 +8,5 @@ export function ConvertKilometers(km)
         return `Kilometers to Meters: ${m} \n Kilometers to Centimeters: ${cm}`;
     }
 }
+
+module.exports = { ConvertKilometers };

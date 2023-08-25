@@ -1,5 +1,5 @@
-import express from 'express';
-import { CalculateAverageWeight } from '../public/js/3_average_weight.js';
+const express = require('express');
+const { CalculateAverageWeight } = require('../public/js/3_average_weight.js');
 
 const api_router = express.Router();
 

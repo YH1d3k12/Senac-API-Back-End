@@ -1,5 +1,5 @@
-import { describe, expect, it } from '@jest/globals';
-import { exercise1 } from '../public/js/1_sum_two_numbers.js';
+const { describe, expect, it } = require( '@jest/globals');
+const { SumTwoNumbers } = require('../public/js/1_sum_two_numbers.js');
 
 describe('Testing my first exercise', () => {
     //Executed before all tests
@@ -12,7 +12,7 @@ describe('Testing my first exercise', () => {
     });
 
     it('Should sum two numbers', () => {
-        const result = exercise1(1,2)
+        const result = SumTwoNumbers(1,2)
         expect(result).toBe(3);
     })
 }) 

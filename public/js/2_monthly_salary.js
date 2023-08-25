@@ -1,4 +1,4 @@
-export function CalculateMonthlySalary(salary, hoursWorked)
+function CalculateMonthlySalary(salary, hoursWorked)
 {
     if (!isNaN(salary) && !isNaN(hoursWorked))
     {
@@ -6,3 +6,5 @@ export function CalculateMonthlySalary(salary, hoursWorked)
     }
 
 }
+
+module.exports = { CalculateMonthlySalary };

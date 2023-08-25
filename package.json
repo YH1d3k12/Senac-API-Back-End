@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "This repository holds my senac query exercises",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "start": "npx nodemon app.js",
-    "dev": "jest test/index.test.js",
-    "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
+    "test": "jest test/index.test.js",
+    "test::cov": "jest test/index.test.js --coverage"
   },
   "repository": {
     "type": "git",

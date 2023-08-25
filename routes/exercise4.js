@@ -1,5 +1,5 @@
-import express from 'express';
-import { ConvertCelsiusToFahrenheit } from '../public/js/4_convert_to_fahrenheit.js';
+const express = require('express');
+const { ConvertCelsiusToFahrenheit } = require('../public/js/4_convert_to_fahrenheit.js');
 
 const api_router = express.Router();
 

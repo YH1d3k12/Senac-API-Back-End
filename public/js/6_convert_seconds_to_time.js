@@ -1,4 +1,4 @@
-export function ConvertSecondsToTime(seconds)
+function ConvertSecondsToTime(seconds)
 {
     if (!isNaN(seconds))
     {
@@ -11,3 +11,5 @@ export function ConvertSecondsToTime(seconds)
         return `${hours} Hour(s) ${minutes} Minute(s) ${seconds} Second(s)`;
     }
 }
+
+module.exports = { ConvertSecondsToTime };

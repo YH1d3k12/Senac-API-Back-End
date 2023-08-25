@@ -1,4 +1,4 @@
-export function CreateMultiplicationTable(number)
+function CreateMultiplicationTable(number)
 {
     if (!isNaN(number))
     {
@@ -8,3 +8,5 @@ export function CreateMultiplicationTable(number)
         }
     }
 }
+
+module.exports = { CreateMultiplicationTable };

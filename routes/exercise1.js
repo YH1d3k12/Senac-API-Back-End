@@ -1,5 +1,5 @@
-import express from 'express';
-import { SumTwoNumbers } from '../public/js/1_sum_two_numbers.js';
+const express = require('express');
+const { SumTwoNumbers } = require('../public/js/1_sum_two_numbers.js');
 
 const api_router = express.Router();
 

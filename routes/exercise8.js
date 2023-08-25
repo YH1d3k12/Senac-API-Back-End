@@ -1,5 +1,5 @@
-import express from 'express';
-import { CreateMultiplicationTable } from '../public/js/8_multiplication_table.js'
+const express = require('express');
+const { CreateMultiplicationTable } = require('../public/js/8_multiplication_table.js');
 
 const api_router = express.Router();
 

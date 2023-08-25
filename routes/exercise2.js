@@ -1,5 +1,6 @@
-import express from 'express';
-import { CalculateMonthlySalary } from '../public/js/2_monthly_salary.js';
+const express = require('express');
+const { CalculateMonthlySalary } = require('../public/js/2_monthly_salary.js');
+
 
 const api_router = express.Router();
 

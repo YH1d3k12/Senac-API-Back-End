@@ -1,5 +1,5 @@
-import express from 'express';
-import { ConvertMilesToKilometers } from '../public/js/5_convert_to_kilometers.js'
+const express = require('express');
+const { ConvertMilesToKilometers } = require('../public/js/5_convert_to_kilometers.js');
 
 const api_router = express.Router();
 

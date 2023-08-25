@@ -1,5 +1,5 @@
-import express from 'express';
-import { ConvertKilometers } from '../public/js/7_detailed_metric_converter.js'
+const express = require('express');
+const { ConvertKilometers } = require('../public/js/7_detailed_metric_converter.js');
 
 const api_router = express.Router();
 

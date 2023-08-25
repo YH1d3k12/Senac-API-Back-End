@@ -1,5 +1,5 @@
-import express from 'express';
-import { ConvertSecondsToTime } from '../public/js/6_convert_seconds_to_time.js'
+const express = require('express');
+const { ConvertSecondsToTime } = require('../public/js/6_convert_seconds_to_time.js');
 
 const api_router = express.Router();
 
