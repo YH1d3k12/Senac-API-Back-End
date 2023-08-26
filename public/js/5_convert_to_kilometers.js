@@ -2,7 +2,7 @@ function ConvertMilesToKilometers(miles)
 {
     if (!isNaN(miles))
     {
-        return parseFloat(miles * 1.60934);
+        return miles * 1.60934;
     }
 }
 
