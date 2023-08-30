@@ -1,10 +1,25 @@
-function CalculateAverageWeight(w1, w2, w3, w4, w5)
+function CalculateAverageWeight(people)
 {
-    if (!isNaN(w1) && !isNaN(w2) && !isNaN(w3) && !isNaN(w4) && !isNaN(w5))
+    // Check if the input data is valid
+    if (!people || !Array.isArray(people)) 
     {
-        return (w1 + w2 + w3 + w4 + w5) / 5;
+        throw new Error("Invalid input data");
     }
+    
+    // Calculate the total weight
+
+    // people.forEach(person => {
+    //     totalWeight += person.weight;
+    // });
+    
+    let totalWeight = people.reduce((sum, person) => sum + person.weight, 0);
+      
+    // Calculate the average weight
+    const averageWeight = totalWeight / people.length;
+      
+    // Return the calculated average weight
+    return averageWeight;
 
 }
-
+  
 module.exports = { CalculateAverageWeight };

@@ -6,11 +6,11 @@ const api_router = express.Router();
 api_router.post('/', (req, res) => {
     const result = ConvertCelsiusToFahrenheit(
         req.body.celsius
-    )
+    );
 
     res.status(200).json({
-        message: `The temperature in fahrenheit is: ${result}`,
+        message: `The temperature in fahrenheit is: ${result}`
     });
 });
 
-export default api_router;
+module.exports = api_router;

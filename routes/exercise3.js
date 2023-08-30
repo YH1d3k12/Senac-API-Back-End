@@ -5,16 +5,12 @@ const api_router = express.Router();
 
 api_router.post('/', (req, res) => {
     const result = CalculateAverageWeight(
-        req.body.w1,
-        req.body.w2,
-        req.body.w3,
-        req.body.w4,
-        req.body.w5
-    )
+        req.body.people
+    );
 
     res.status(200).json({
-        message: `The average weigth is: ${result}`,
+        message: `The average weigth is: ${result}`
     });
 });
 
-export default api_router;
+module.exports = api_router;
