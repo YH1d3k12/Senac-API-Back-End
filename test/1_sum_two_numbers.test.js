@@ -37,8 +37,9 @@ describe('Testing my first exercise', () => {
     });
 
     // trying to pass a boolean
-    it('It treats the boolean as 1 or 0, idk if its ok', () => {
-        const result = SumTwoNumbers(true, false)
-        expect(result).toBe(1);
+    it('It treats the boolean as 1 or 0, dont think its ok', () => {
+        expect(() => {
+            SumTwoNumbers(true, false);
+        }).toThrow(TypeError);
     });
 }) 

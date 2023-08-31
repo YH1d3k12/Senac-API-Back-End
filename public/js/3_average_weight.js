@@ -13,7 +13,7 @@ function CalculateAverageWeight(people) {
     let totalWeight = people.reduce((sum, person) => {
         // Checks if person.weight is a number before calculation
         if (typeof person.weight !== 'number') {
-            throw new Error("Weight should be a number");
+            throw new TypeError("Weight should be a number");
         }
         return sum + person.weight;
     }, 0);
@@ -22,7 +22,7 @@ function CalculateAverageWeight(people) {
     const averageWeight = totalWeight / people.length;
 
     // Return the calculated average weight
-    return parseFloat(averageWeight.toFixed(1));
+    return parseFloat(averageWeight.toFixed(2));
 }
 
 module.exports = { CalculateAverageWeight };
