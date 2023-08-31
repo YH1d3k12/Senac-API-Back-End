@@ -12,7 +12,7 @@ describe('Testing my second exercise', () => {
     });
 
     // testing two regular numbers
-    it('Should sum two numbers', () => {
+    it('Should multiply two numbers', () => {
         const result = CalculateMonthlySalary(20,100)
         expect(result).toBe(2000);
     })
