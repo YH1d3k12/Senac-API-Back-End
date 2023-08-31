@@ -1,7 +1,7 @@
 const { describe, expect, it } = require( '@jest/globals');
-const { SumTwoNumbers } = require('../public/js/1_sum_two_numbers.js');
+const { CalculateMonthlySalary } = require('../public/js/2_monthly_salary.js');
 
-describe('Testing my first exercise', () => {
+describe('Testing my second exercise', () => {
     //Executed before all tests
     beforeAll(async () => {
         console.info('Starting TDD test with Jest!');
@@ -11,8 +11,9 @@ describe('Testing my first exercise', () => {
         console.info('Ending all tests');
     });
 
+    // testing two regular numbers
     it('Should sum two numbers', () => {
-        const result = SumTwoNumbers(1,2)
-        expect(result).toBe(3);
+        const result = CalculateMonthlySalary(20,100)
+        expect(result).toBe(2000);
     })
 }) 

@@ -7,6 +7,7 @@ const exercise5 = require('./routes/exercise5.js');
 const exercise6 = require('./routes/exercise6.js');
 const exercise7 = require('./routes/exercise7.js');
 const exercise8 = require('./routes/exercise8.js');
+const exercise9 = require('./routes/exercise9.js');
 
 const app = express(); // Create an instance of an Express application
 const PORT = process.env.PORT || 3000; // Choose a port for your server
@@ -24,6 +25,7 @@ app.use('/5', exercise5);
 app.use('/6', exercise6);
 app.use('/7', exercise7);
 app.use('/8', exercise8);
+app.use('/9', exercise9);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

@@ -2,7 +2,8 @@ function ConvertCelsiusToFahrenheit(celsius)
 {
     if (!isNaN(celsius))
     {
-        return (9 * celsius + 160) / 5;
+        const result = (9 * celsius + 160) / 5;
+        return parseFloat(result.toFixed(1));
     }
 }
 
