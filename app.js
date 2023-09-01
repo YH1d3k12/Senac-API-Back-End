@@ -1,4 +1,5 @@
 const express = require('express'); // Import the Express library
+const cors = require('cors'); // Import the cors package
 const exercise1 = require('./routes/exercise1.js');
 const exercise2 = require('./routes/exercise2.js');
 const exercise3 = require('./routes/exercise3.js');
@@ -16,6 +17,9 @@ const PORT = process.env.PORT || 3000; // Choose a port for your server
 app.use(express.static('public'));
 //Middleware which allows the request of json files
 app.use(express.json());
+// Enable CORS for all routes
+// This allows other ports to send requests
+app.use(cors());
 
 app.use('/1', exercise1);
 app.use('/2', exercise2);

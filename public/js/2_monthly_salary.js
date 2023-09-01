@@ -2,8 +2,8 @@ function CalculateMonthlySalary(salary, hoursWorked)
 {
     if (!isNaN(salary) && !isNaN(hoursWorked))
     {
-        const result = salary * hoursWorked;
-        return parseFloat(result.toFixed(2));
+        const result = parseFloat(salary) * parseFloat(hoursWorked);
+        return result.toFixed(2);
     }
     else
     {

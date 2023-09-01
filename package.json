@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/YH1d3k12/Senac_Query_Exercises#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2"
   },
   "devDependencies": {

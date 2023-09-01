@@ -2,8 +2,8 @@ function SumTwoNumbers(num1, num2)
 {
     if (!isNaN(num1) && !isNaN(num2))
     {
-        const result = num1 + num2;
-        return parseFloat(result.toFixed(1));
+        const result = parseFloat(num1) + parseFloat(num2);
+        return result.toFixed(1);
     }
     else
     {
