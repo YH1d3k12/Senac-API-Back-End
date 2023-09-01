@@ -31,9 +31,8 @@ describe('Testing my first exercise', () => {
 
     // testing 0
     it('Should convert celsius to fahrenheit', () => {
-        expect(() => {
-            ConvertCelsiusToFahrenheit(32);
-        }).toThrow(TypeError);
+        const result = ConvertCelsiusToFahrenheit(0)
+        expect(result).toBe(32);
     });
 
     // testing a string

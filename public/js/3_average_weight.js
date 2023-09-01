@@ -26,7 +26,4 @@ function CalculateAverageWeight(people) {
 }
 
 module.exports = { CalculateAverageWeight };
-    // people.forEach(person => {
-    //     totalWeight += person.weight;
-    // });
     
