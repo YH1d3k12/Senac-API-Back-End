@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx nodemon app.js",
     "test": "jest --testMatch='**/*.test.js'",
-    "test::cov": "jest --testMatch='**/*.test.js' --coverage"
+    "test:cov": "jest --testMatch='**/*.test.js' --coverage"
   },
   "repository": {
     "type": "git",
