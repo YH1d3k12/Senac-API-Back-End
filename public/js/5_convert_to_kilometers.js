@@ -1,9 +1,10 @@
 function ConvertMilesToKilometers(miles)
 {
+    console.log(miles)
     if (!isNaN(miles))
     {
-        const result = miles * 1.60934;
-        return parseFloat(result.toFixed(2));
+        const result = parseFloat(miles) * 1.60934;
+        return result.toFixed(2);
     }
 }
 

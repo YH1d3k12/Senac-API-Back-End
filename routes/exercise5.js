@@ -9,7 +9,7 @@ api_router.post('/', (req, res) => {
     );
 
     res.status(200).json({
-        message: `The distance in kilometers is: ${result}`
+        message: result
     });
 });
 
