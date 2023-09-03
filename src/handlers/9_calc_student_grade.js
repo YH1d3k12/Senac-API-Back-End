@@ -1,22 +1,22 @@
 function CalcStudentGrades(grades)
 {
     // Check if the input data is valid
-    if (!grades || !Array.isArray(grades)) {
+    if (!grades || !Array.isArray(grades)) 
+    {
         throw new Error("Invalid input data");
     };
 
-    // Calculate the student grades
-    // if (!isNaN(grade1) && !isNaN(grade2) && !isNaN(grade3))
-    // {
-    //     return (grade1 + grade2 + grade3) / 3;
-    // }
-
     let totalScore = grades.reduce((sum, grade) => {
         // Checks if grade.score is a number before calculation
-        if (typeof grade.score !== 'number') {
+        if (!isNaN(grade.score)) 
+        {
+            return sum + parseFloat(grade.score);
+        }
+        else
+        {
             throw new Error("score should be a number");
         }
-        return sum + grade.score;
+
     }, 0);
 
     // Calculate the average score
@@ -40,7 +40,7 @@ function CalcStudentGrades(grades)
     };
 
     return {
-        score: averageScore.toFixed(1),
+        score: averageScore.toFixed(2),
         message: msg
     };
 
