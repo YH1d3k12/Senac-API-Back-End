@@ -1,5 +1,5 @@
 const { describe, expect, it } = require( '@jest/globals');
-const { ConvertMilesToKilometers } = require('../public/js/5_convert_to_kilometers.js');
+const { ConvertMilesToKilometers } = require('../../public/js/5_convert_to_kilometers.js');
 
 describe('Testing my first exercise', () => {
     //Executed before all tests

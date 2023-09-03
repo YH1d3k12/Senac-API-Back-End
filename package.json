@@ -4,7 +4,7 @@
   "description": "This repository holds my senac query exercises",
   "main": "app.js",
   "scripts": {
-    "start": "npx nodemon app.js",
+    "start": "npx nodemon src/app.js",
     "test": "jest --testMatch='**/*.test.js'",
     "test:cov": "jest --testMatch='**/*.test.js' --coverage"
   },

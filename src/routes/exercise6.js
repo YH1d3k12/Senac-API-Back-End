@@ -1,11 +1,11 @@
 const express = require('express');
-const { CreateMultiplicationTable } = require('../public/js/8_multiplication_table.js');
+const { ConvertSecondsToTime } = require('../handlers/6_convert_seconds_to_time.js');
 
 const api_router = express.Router();
 
 api_router.post('/', (req, res) => {
-    const result = CreateMultiplicationTable(
-        req.body.number
+    const result = ConvertSecondsToTime(
+        req.body.seconds
     );
 
     res.status(200).json({

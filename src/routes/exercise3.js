@@ -1,5 +1,5 @@
 const express = require('express');
-const { CalculateAverageWeight } = require('../public/js/3_average_weight.js');
+const { CalculateAverageWeight } = require('../handlers/3_average_weight.js');
 
 const api_router = express.Router();
 

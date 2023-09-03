@@ -1,5 +1,5 @@
 const express = require('express');
-const { ConvertCelsiusToFahrenheit } = require('../public/js/4_convert_to_fahrenheit.js');
+const { ConvertCelsiusToFahrenheit } = require('../handlers/4_convert_to_fahrenheit.js');
 
 const api_router = express.Router();
 

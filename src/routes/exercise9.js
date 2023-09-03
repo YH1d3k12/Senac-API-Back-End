@@ -1,5 +1,5 @@
 const express = require('express');
-const { CalcStudentGrades } = require('../public/js/9_calc_student_grade.js');
+const { CalcStudentGrades } = require('../handlers/9_calc_student_grade.js');
 
 const api_router = express.Router();
 
