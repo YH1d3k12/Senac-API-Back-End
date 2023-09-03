@@ -9,7 +9,7 @@ api_router.post('/', (req, res) => {
     );
 
     res.status(200).json({
-        message: `The average weigth is: ${result}`
+        message: result
     });
 });
 

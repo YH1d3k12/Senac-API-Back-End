@@ -9,7 +9,7 @@ api_router.post('/', (req, res) => {
     );
 
     res.status(200).json({
-        message: `The temperature in fahrenheit is: ${result}`
+        message: result
     });
 });
 

@@ -10,7 +10,7 @@ api_router.post('/', (req, res) => {
     );
 
     res.status(200).json({
-        message: `This month payment is: ${result}`
+        message: result
     });
 });
 

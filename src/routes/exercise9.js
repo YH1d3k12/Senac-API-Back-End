@@ -8,7 +8,9 @@ api_router.post('/', (req, res) => {
         req.body.grades
     );
 
-    res.status(200).json({result});
+    res.status(200).json({
+        message: result
+    });
 });
 
 module.exports = api_router;
