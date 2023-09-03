@@ -1,11 +1,11 @@
 const express = require('express');
-const { ConvertMilesToKilometers } = require('../public/js/5_convert_to_kilometers.js');
+const { ConvertKilometers } = require('../handlers/7_detailed_metric_converter.js');
 
 const api_router = express.Router();
 
 api_router.post('/', (req, res) => {
-    const result = ConvertMilesToKilometers(
-        req.body.miles
+    const result = ConvertKilometers(
+        req.body.km
     );
 
     res.status(200).json({
