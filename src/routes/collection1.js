@@ -131,7 +131,7 @@ api_router.post('/9', (req, res) => {
     });
 });
 
-// ********************** Exercise 9 ********************** //
+// ********************** Exercise 10 ********************** //
 
 api_router.post('/10', (req, res) => {
     const result = BmiCalculator(
