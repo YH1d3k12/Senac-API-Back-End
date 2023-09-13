@@ -1,8 +1,8 @@
-function BmiCalculator(weight, height, sex)
+function BmiCalculator(weight, height)
 {
     if (!isNaN(weight) && !isNaN(height))
     {
-        const result = parseFloat(weight) / (parseFloat(height) * parseFloat(height));
+        let result = parseFloat(weight) / (parseFloat(height) * parseFloat(height));
     }
     else
     {
@@ -35,6 +35,11 @@ function BmiCalculator(weight, height, sex)
     {
         msg = 'Obesidade de III grau';
     }
+
+    return {
+        score: result.toFixed(2),
+        message: msg
+    };
 }
 
 module.exports = { BmiCalculator };

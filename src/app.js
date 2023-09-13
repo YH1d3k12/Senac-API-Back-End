@@ -1,14 +1,7 @@
 const express = require('express'); // Import the Express library
 const cors = require('cors'); // Import the cors package
-const exercise1 = require('./routes/exercise1.js');
-const exercise2 = require('./routes/exercise2.js');
-const exercise3 = require('./routes/exercise3.js');
-const exercise4 = require('./routes/exercise4.js');
-const exercise5 = require('./routes/exercise5.js');
-const exercise6 = require('./routes/exercise6.js');
-const exercise7 = require('./routes/exercise7.js');
-const exercise8 = require('./routes/exercise8.js');
-const exercise9 = require('./routes/exercise9.js');
+const collection1 = require('./routes/collection1to10.js');
+
 
 const app = express(); // Create an instance of an Express application
 const PORT = process.env.PORT || 3000; // Choose a port for your server
@@ -19,15 +12,7 @@ app.use(express.json());
 // This allows other ports to send requests
 app.use(cors());
 
-app.use('/1', exercise1);
-app.use('/2', exercise2);
-app.use('/3', exercise3);
-app.use('/4', exercise4);
-app.use('/5', exercise5);
-app.use('/6', exercise6);
-app.use('/7', exercise7);
-app.use('/8', exercise8);
-app.use('/9', exercise9);
+app.use('/1', collection1);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
