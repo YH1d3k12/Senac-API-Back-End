@@ -5,8 +5,12 @@ function ConvertKilometers(km)
         let m = parseFloat(km * 1000);
         let cm = parseFloat(m * 100);
         
-        return `Kilometers to Meters: ${m} \n Kilometers to Centimeters: ${cm}`;
+        return {
+            meters: m,
+            centimeters: cm,
+            message: `Kilometers to Meters: ${m} \n Kilometers to Centimeters: ${cm}`
+        };
     }
-}
+};
 
 module.exports = { ConvertKilometers };

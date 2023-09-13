@@ -9,7 +9,9 @@ api_router.post('/', (req, res) => {
     );
 
     res.status(200).json({
-        message: result
+        meters: result.meters,
+        centimeters: result.centimeters,
+        message: result.message
     });
 });
 

@@ -9,7 +9,10 @@ api_router.post('/', (req, res) => {
     );
 
     res.status(200).json({
-        message: result
+        hours: result.hours,
+        minutes: result.minutes,
+        seconds: result.seconds,
+        message: result.message
     });
 });
 
