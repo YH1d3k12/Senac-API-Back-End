@@ -1,8 +1,10 @@
 function BmiCalculator(weight, height)
 {
+    let result = 0;
+
     if (!isNaN(weight) && !isNaN(height))
     {
-        let result = parseFloat(weight) / (parseFloat(height) * parseFloat(height));
+        result = parseFloat(weight) / (parseFloat(height) * parseFloat(height));
     }
     else
     {
