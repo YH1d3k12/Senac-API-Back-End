@@ -5,6 +5,11 @@ const { CheckNumber } = require('../handlers/12_check_number.js');
 const { IsTheNumberOddOrEven } = require('../handlers/13_odd_or_even.js');
 const { WhichNumberIsGreater } = require('../handlers/14_which_is_greater.js');
 const { IsItATriangle } = require('../handlers/15_is_it_a_triangle.js');
+const { TaxCalculator } = require('../handlers/16_tax_calculator.js');
+const { CalcWeightedStudentGrades } = require('../handlers/17_calc_weighted_student_grades.js');
+const { CalcCarFinalCost } = require('../handlers/18_car_final_cost.js');
+const { FeeCalculator } = require('../handlers/19_fee_calculator.js');
+const { IPITaxCalculator } = require('../handlers/20_ipi_tax_calculator.js');
 
 const api_router = express.Router();
 
@@ -56,7 +61,7 @@ api_router.post('/14', (req, res) => {
 
     res.status(200).json({
         who: result.who,
-        message: result.msg,
+        message: result.message,
     });
 });
 
@@ -71,23 +76,75 @@ api_router.post('/15', (req, res) => {
 
     res.status(200).json({
         isTriangle: result.isItTriangle,
-        message: result.msg,
+        message: result.message,
     });
 });
 
 // ********************** Exercise 16 ********************** //
 
+api_router.post('/16', (req, res) => {
+    const result = TaxCalculator(
+        req.body.cpf,
+        req.body.dependents,
+        req.body.income
+    );
+
+    res.status(200).json({
+        status: result.status,
+        message: result.message
+    });
+});
 
 // ********************** Exercise 17 ********************** //
 
+api_router.post('/17', (req, res) => {
+    const result = CalcWeightedStudentGrades(
+        req.body.grades
+    );
+
+    res.status(200).json({
+        score: result.score,
+        message: result.message
+    });
+});
 
 // ********************** Exercise 18 ********************** //
 
+api_router.post('/18', (req, res) => {
+    const result = CalcCarFinalCost(
+        req.body.cost
+    );
+
+    res.status(200).json({
+        message: result
+    });
+});
 
 // ********************** Exercise 19 ********************** //
 
+api_router.post('/19', (req, res) => {
+    const result = FeeCalculator(
+        req.body.capital,
+        req.body.tax,
+        req.body.days
+    );
+
+    res.status(200).json({
+        message: result
+    });
+});
 
 // ********************** Exercise 20 ********************** //
 
+api_router.post('/20', (req, res) => {
+    const result = IPITaxCalculator(
+        req.body.ipi,
+        req.body.items
+    );
+
+    res.status(200).json({
+        message: result
+    });
+});
 
 module.exports = api_router;
