@@ -1,15 +1,15 @@
 // Imports
 const express = require('express');
-const { Calculator } = require('../handlers/11_calculator.js');
-const { CheckNumber } = require('../handlers/12_check_number.js');
-const { IsTheNumberOddOrEven } = require('../handlers/13_odd_or_even.js');
-const { WhichNumberIsGreater } = require('../handlers/14_which_is_greater.js');
-const { IsItATriangle } = require('../handlers/15_is_it_a_triangle.js');
-const { TaxCalculator } = require('../handlers/16_tax_calculator.js');
-const { CalcWeightedStudentGrades } = require('../handlers/17_calc_weighted_student_grades.js');
-const { CalcCarFinalCost } = require('../handlers/18_car_final_cost.js');
-const { FeeCalculator } = require('../handlers/19_fee_calculator.js');
-const { IPITaxCalculator } = require('../handlers/20_ipi_tax_calculator.js');
+const { Calculator } = require('../services/11_calculator.js');
+const { CheckNumber } = require('../services/12_check_number.js');
+const { IsTheNumberOddOrEven } = require('../services/13_odd_or_even.js');
+const { WhichNumberIsGreater } = require('../services/14_which_is_greater.js');
+const { IsItATriangle } = require('../services/15_is_it_a_triangle.js');
+const { TaxCalculator } = require('../services/16_tax_calculator.js');
+const { CalcWeightedStudentGrades } = require('../services/17_calc_weighted_student_grades.js');
+const { CalcCarFinalCost } = require('../services/18_car_final_cost.js');
+const { FeeCalculator } = require('../services/19_fee_calculator.js');
+const { IPITaxCalculator } = require('../services/20_ipi_tax_calculator.js');
 
 const api_router = express.Router();
 

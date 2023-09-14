@@ -1,16 +1,16 @@
 // Imports
 
 const express = require('express');
-const { SumTwoNumbers } = require('../handlers/1_sum_two_numbers.js');
-const { CalculateMonthlySalary } = require('../handlers/2_monthly_salary.js');
-const { CalculateAverageWeight } = require('../handlers/3_average_weight.js');
-const { ConvertCelsiusToFahrenheit } = require('../handlers/4_convert_to_fahrenheit.js');
-const { ConvertMilesToKilometers } = require('../handlers/5_convert_to_kilometers.js');
-const { ConvertSecondsToTime } = require('../handlers/6_convert_seconds_to_time.js');
-const { ConvertKilometers } = require('../handlers/7_detailed_metric_converter.js');
-const { CreateMultiplicationTable } = require('../handlers/8_multiplication_table.js');
-const { CalcStudentGrades } = require('../handlers/9_calc_student_grade.js');
-const { BmiCalculator } = require('../handlers/10_bmi_calculator.js');
+const { SumTwoNumbers } = require('../services/1_sum_two_numbers.js');
+const { CalculateMonthlySalary } = require('../services/2_monthly_salary.js');
+const { CalculateAverageWeight } = require('../services/3_average_weight.js');
+const { ConvertCelsiusToFahrenheit } = require('../services/4_convert_to_fahrenheit.js');
+const { ConvertMilesToKilometers } = require('../services/5_convert_to_kilometers.js');
+const { ConvertSecondsToTime } = require('../services/6_convert_seconds_to_time.js');
+const { ConvertKilometers } = require('../services/7_detailed_metric_converter.js');
+const { CreateMultiplicationTable } = require('../services/8_multiplication_table.js');
+const { CalcStudentGrades } = require('../services/9_calc_student_grade.js');
+const { BmiCalculator } = require('../services/10_bmi_calculator.js');
 
 
 const api_router = express.Router();
@@ -18,14 +18,35 @@ const api_router = express.Router();
 // ********************** Exercise 1 ********************** //
 
 api_router.post('/1', (req, res) => {
-    const result = SumTwoNumbers(
-        req.body.num1,
-        req.body.num2
-    );
 
-    res.status(200).json({
-        message: result
-    });
+    try
+    {
+        const result = SumTwoNumbers(
+            req.body.num1,
+            req.body.num2
+        );
+    
+        res.status(200).json({
+            message: result
+        });
+    }
+    catch (error)
+    {
+        //Se o error for typeerror, é porque não foi passado um número
+        if (error instanceof TypeError)
+        {
+            res.status(500).json({
+                message: error.message
+            });
+        }
+        else if (error instanceof SyntaxError)
+        {
+            res.status(500).json({
+                message: "Syntax Error"
+            })
+        }
+    }
+
 });
 
 // ********************** Exercise 2 ********************** //
