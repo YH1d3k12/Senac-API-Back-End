@@ -1,7 +1,7 @@
 const express = require('express'); // Import the Express library
 const cors = require('cors'); // Import the cors package
 const collection1 = require('./routes/collection1.js');
-const collection1 = require('./routes/collection2.js');
+const collection2 = require('./routes/collection2.js');
 
 const app = express(); // Create an instance of an Express application
 const PORT = process.env.PORT || 3000; // Choose a port for your server
