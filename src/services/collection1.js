@@ -10,7 +10,18 @@ class ExerciseCollection1Services
         }
         else
         {
-            throw new TypeError("Both arguments should be numbers");
+            if (isNaN(num1) && isNaN(num2)) 
+            {
+                throw new TypeError("Both arguments should be numbers");
+            } 
+            else if (isNaN(num1)) 
+            {
+                throw new TypeError("First argument is not a number");
+            } 
+            else 
+            {
+                throw new TypeError("Second argument is not a number");
+            }
         }
     }
 
@@ -24,7 +35,18 @@ class ExerciseCollection1Services
         }
         else
         {
-            throw new TypeError("Both arguments should be numbers");
+            if (isNaN(salary) && isNaN(hoursWorked)) 
+            {
+                throw new TypeError("Both arguments should be numbers");
+            } 
+            else if (isNaN(salary)) 
+            {
+                throw new TypeError("Salary is not a number");
+            } 
+            else 
+            {
+                throw new TypeError("Hours worked is not a number");
+            }
         }
     }
 
@@ -34,7 +56,7 @@ class ExerciseCollection1Services
         // Check if the input data is valid
         if (!people || !Array.isArray(people)) 
         {
-            throw new Error("Invalid input data");
+            throw new TypeError("Invalid input data, people is not an array");
         }
     
         let totalWeight = people.reduce((sum, person) => {
@@ -79,6 +101,10 @@ class ExerciseCollection1Services
             const result = parseFloat(miles) * 1.60934;
             return result.toFixed(2);
         }
+        else
+        {
+            throw new TypeError("Argument should be a number");
+        }
     }
 
     // ********************** Exercise 6 ********************** //
@@ -99,12 +125,16 @@ class ExerciseCollection1Services
                 message: `${hours} Hour(s) ${minutes} Minute(s) ${seconds} Second(s)`
             };
         }
+        else
+        {
+            throw new TypeError("Argument should be a number");
+        }
     }
 
     // ********************** Exercise 7 ********************** //
     ConvertKilometers(km)
     {
-    if (!isNaN(km))
+        if (!isNaN(km))
         {
             let m = parseFloat(km * 1000);
             let cm = parseFloat(m * 100);
@@ -114,6 +144,10 @@ class ExerciseCollection1Services
                 centimeters: cm,
                 message: `Kilometers to Meters: ${m} \n Kilometers to Centimeters: ${cm}`
             };
+        }
+        else
+        {
+            throw new TypeError("Argument should be a number");
         }
     };
 
@@ -133,6 +167,10 @@ class ExerciseCollection1Services
                 });
             }
         }
+        else
+        {
+            throw new TypeError("Argument should be a number");
+        }
 
         return multiplicationTable;
     }
@@ -143,7 +181,7 @@ class ExerciseCollection1Services
         // Check if the input data is valid
         if (!grades || !Array.isArray(grades)) 
         {
-            throw new Error("Invalid input data");
+            throw new TypeError("Invalid input data, grades is not an array");
         };
     
         let totalScore = grades.reduce((sum, grade) => {
@@ -154,7 +192,7 @@ class ExerciseCollection1Services
             }
             else
             {
-                throw new Error("score should be a number");
+                throw new TypeError("Score should be a number");
             }
     
         }, 0);
@@ -196,7 +234,19 @@ class ExerciseCollection1Services
         }
         else
         {
-            throw new TypeError("Both arguments should be numbers");
+            if (isNaN(weight) && isNaN(height)) 
+            {
+                throw new TypeError("Both arguments should be numbers");
+            } 
+            else if (isNaN(weight)) 
+            {
+                throw new TypeError("Weight is not a number");
+            } 
+            else 
+            {
+                throw new TypeError("Height is not a number");
+            }
+        
         }
 
         let msg = '';

@@ -10,7 +10,18 @@ class ExerciseCollection2Services
         }
         else
         {
-            throw new TypeError("Both arguments should be numbers");
+            if (isNaN(num1) && isNaN(num2)) 
+            {
+                throw new TypeError("Both arguments should be numbers");
+            } 
+            else if (isNaN(num1)) 
+            {
+                throw new TypeError("First argument is not a number");
+            } 
+            else 
+            {
+                throw new TypeError("Second argument is not a number");
+            }
         }
     
         let result = 0;
@@ -33,7 +44,7 @@ class ExerciseCollection2Services
                 result = x / y;
                 break;
             default:
-                throw new TypeError("Missing a valid operation parameter");
+                throw new TypeError("Invalid operation argument");
                 break;
         }
     
@@ -121,7 +132,18 @@ class ExerciseCollection2Services
         }
         else
         {
-            throw new TypeError("Both arguments should be numbers");
+            if (isNaN(num1) && isNaN(num2)) 
+            {
+                throw new TypeError("Both arguments should be numbers");
+            } 
+            else if (isNaN(num1)) 
+            {
+                throw new TypeError("First argument is not a number");
+            } 
+            else 
+            {
+                throw new TypeError("Second argument is not a number");
+            }
         }
     
         return {
@@ -163,7 +185,22 @@ class ExerciseCollection2Services
         }
         else
         {
-            throw new TypeError("Arguments should be numbers");
+            if (isNaN(segmentA) && isNaN(segmentB) && isNaN(segmentC)) 
+            {
+                throw new TypeError("Arguments should be numbers");
+            } 
+            else if (isNaN(segmentA)) 
+            {
+                throw new TypeError("SegmentA argument is not a number");
+            } 
+            else if (isNaN(segmentB)) 
+            {
+                throw new TypeError("SegmentB argument is not a number");
+            } 
+            else 
+            {
+                throw new TypeError("SegmentC argument is not a number");
+            }
         }
     
         return {
@@ -207,16 +244,31 @@ class ExerciseCollection2Services
                 msgStatus = 4;
                 msg = `Individual of CPF ${cpf}, you need to pay R$:${(finalIncome * 0.2).toFixed(2)}`;
             }
-    
-            return {
-                status: msgStatus,
-                message: msg
-            };
         }
         else
         {
-            throw new TypeError("Arguments should be numbers");
+            if (isNaN(cpf) && isNaN(dependents) && isNaN(income)) 
+            {
+                throw new TypeError("Arguments should be numbers");
+            } 
+            else if (isNaN(cpf)) 
+            {
+                throw new TypeError("CPF is not a number");
+            } 
+            else if (isNaN(dependents)) 
+            {
+                throw new TypeError("Dependents is not a number");
+            } 
+            else 
+            {
+                throw new TypeError("Income is not a number");
+            }
         }
+
+        return {
+            status: msgStatus,
+            message: msg
+        };
     }
 
     // ********************** Exercise 17 ********************** //
@@ -225,7 +277,7 @@ class ExerciseCollection2Services
         // Check if the input data is valid
         if (!grades || !Array.isArray(grades)) 
         {
-            throw new Error("Invalid input data");
+            throw new TypeError("Invalid input data");
         };
     
         let totalScore = 0;
@@ -241,7 +293,18 @@ class ExerciseCollection2Services
             } 
             else 
             {
-                throw new Error("score and weight should be numbers");
+                if (isNaN(grade.score) && isNaN(grade.weight))
+                {
+                    throw new TypeError("Score and weight should be numbers");
+                }
+                else if (isNaN(grade.score))
+                {
+                    throw new TypeError("Score should be a number");
+                }
+                else
+                {
+                    throw new TypeError("Weight should be a number");
+                }
             }
         };
     
@@ -302,7 +365,22 @@ class ExerciseCollection2Services
         }
         else
         {
-            throw new TypeError("Arguments should be numbers");
+            if (isNaN(capital) && isNaN(tax) && isNaN(days)) 
+            {
+                throw new TypeError("Arguments should be numbers");
+            } 
+            else if (isNaN(capital)) 
+            {
+                throw new TypeError("Capital is not a number");
+            } 
+            else if (isNaN(tax)) 
+            {
+                throw new TypeError("Tax is not a number");
+            } 
+            else 
+            {
+                throw new TypeError("Days is not a number");
+            }
         }
     }
 
@@ -312,7 +390,7 @@ class ExerciseCollection2Services
         // Check if the input data is valid
         if (!items || !Array.isArray(items)) 
         {
-            throw new Error("Invalid input data");
+            throw new TypeError("Invalid input data, items is not an array");
         }
         else if (!isNaN(ipi))
         {
@@ -325,7 +403,22 @@ class ExerciseCollection2Services
                 } 
                 else 
                 {
-                    throw new Error("Arguments should be numbers");
+                    if (isNaN(item.qtd) && isNaN(item.id) && isNaN(item.price)) 
+                    {
+                        throw new TypeError("Array arguments should be numbers");
+                    } 
+                    else if (isNaN(item.qtd)) 
+                    {
+                        throw new TypeError("Item quantity is not a number");
+                    }
+                    else if (isNaN(item.id)) 
+                    {
+                        throw new TypeError("Item id is not a number");
+                    }
+                    else
+                    {
+                        throw new TypeError("Item price is not a number");
+                    } 
                 }
             };
     
@@ -333,7 +426,7 @@ class ExerciseCollection2Services
         }
         else 
         {
-            throw new Error("IPI should be a number");
+            throw new TypeError("IPI should be a number");
         }
     }
 }
