@@ -1,17 +1,18 @@
-const ExerciseCollection1Services = require('../services/collection1.js');
+const ExerciseCollection2Services = require('../services/collection2.js');
 
 
-const exercises = new ExerciseCollection1Services();
+const exercises = new ExerciseCollection2Services();
 
 
 class ExerciseCollection1Controller
 {
-    // ********************** Exercise 1 ********************** //
-    SumTwoNumbers(req, res)
+    // ********************** Exercise 11 ********************** //
+    Calculator(req, res)
     {
         try
         {
-            const result = exercises.SumTwoNumbers(
+            const result = exercises.Calculator(
+                req.body.operation,
                 req.body.num1,
                 req.body.num2
             );
@@ -31,16 +32,15 @@ class ExerciseCollection1Controller
         }
     }
 
-    // ********************** Exercise 2 ********************** //
-    CalculateMonthlySalary(req, res)
+    // ********************** Exercise 12 ********************** //
+    CheckNumber(req, res)
     {
         try
         {
-            const result = exercises.CalculateMonthlySalary(
-                req.body.salary,
-                req.body.hoursWorked
+            const result = exercises.CheckNumber(
+                req.body.number
             );
-
+        
             res.status(200).json({
                 message: result
             });
@@ -56,15 +56,15 @@ class ExerciseCollection1Controller
         }
     }
 
-    // ********************** Exercise 3 ********************** //
-    CalculateAverageWeight(req, res)
+    // ********************** Exercise 13 ********************** //
+    IsTheNumberOddOrEven(req, res)
     {
         try
         {
-            const result = exercises.CalculateAverageWeight(
-                req.body.people
+            const result = exercises.IsTheNumberOddOrEven(
+                req.body.number
             );
-
+        
             res.status(200).json({
                 message: result
             });
@@ -79,18 +79,20 @@ class ExerciseCollection1Controller
             }
         }
     }
-    
-    // ********************** Exercise 4 ********************** //
-    ConvertCelsiusToFahrenheit(req, res)
+
+    // ********************** Exercise 14 ********************** //
+    WhichNumberIsGreater(req, res)
     {
         try
         {
-            const result = exercises.ConvertCelsiusToFahrenheit(
-                req.body.celsius
+            const result = exercises.WhichNumberIsGreater(
+                req.body.num1,
+                req.body.num2
             );
-
+        
             res.status(200).json({
-                message: result
+                who: result.who,
+                message: result.message,
             });
         }
         catch (error)
@@ -104,17 +106,20 @@ class ExerciseCollection1Controller
         }
     }
         
-    // ********************** Exercise 5 ********************** //
-    ConvertMilesToKilometers(req, res)
+    // ********************** Exercise 15 ********************** //
+    IsItATriangle(req, res)
     {
         try
         {
-            const result = exercises.ConvertMilesToKilometers(
-                req.body.miles
+            const result = exercises.IsItATriangle(
+                req.body.segmentA,
+                req.body.segmentB,
+                req.body.segmentC
             );
-
+        
             res.status(200).json({
-                message: result
+                isTriangle: result.isItTriangle,
+                message: result.message,
             });
         }
         catch (error)
@@ -128,19 +133,19 @@ class ExerciseCollection1Controller
         }
     }
 
-    // ********************** Exercise 6 ********************** //
-    ConvertSecondsToTime(req, res)
+    // ********************** Exercise 16 ********************** //
+    TaxCalculator(req, res)
     {
         try
         {
-            const result = exercises.ConvertSecondsToTime(
-                req.body.seconds
+            const result = exercises.TaxCalculator(
+                req.body.cpf,
+                req.body.dependents,
+                req.body.income
             );
-
+        
             res.status(200).json({
-                hours: result.hours,
-                minutes: result.minutes,
-                seconds: result.seconds,
+                status: result.status,
                 message: result.message
             });
         }
@@ -155,65 +160,15 @@ class ExerciseCollection1Controller
         }
     }
 
-    // ********************** Exercise 7 ********************** //
-    ConvertKilometers(req, res)
+    // ********************** Exercise 17 ********************** //
+    CalcWeightedStudentGrades(req, res)
     {
         try
         {
-            const result = exercises.ConvertKilometers(
-                req.body.km
-            );
-
-            res.status(200).json({
-                meters: result.meters,
-                centimeters: result.centimeters,
-                message: result.message
-            });
-        }
-        catch (error)
-        {
-            if (error instanceof TypeError)
-            {
-                res.status(500).json({
-                    message: error.message
-                });
-            }
-        }
-    }
-    
-    // ********************** Exercise 8 ********************** //
-    CreateMultiplicationTable(req, res)
-    {
-        try
-        {
-            const result = exercises.CreateMultiplicationTable(
-                req.body.number
-            );
-
-            res.status(200).json({
-                message: result
-            });
-        }
-        catch (error)
-        {
-            if (error instanceof TypeError)
-            {
-                res.status(500).json({
-                    message: error.message
-                });
-            }
-        }
-    }
-
-    // ********************** Exercise 9 ********************** //
-    CalcStudentGrades(req, res)
-    {
-        try
-        {
-            const result = exercises.CalcStudentGrades(
+            const result = exercises.CalcWeightedStudentGrades(
                 req.body.grades
             );
-
+        
             res.status(200).json({
                 score: result.score,
                 message: result.message
@@ -229,20 +184,69 @@ class ExerciseCollection1Controller
             }
         }
     }
-    
-    // ********************** Exercise 10 ********************** //
-    BmiCalculator(req, res)
+
+    // ********************** Exercise 18 ********************** //
+    CalcCarFinalCost(req, res)
     {
         try
         {
-            const result = exercises.BmiCalculator(
-                req.body.weight,
-                req.body.height
+            const result = exercises.CalcCarFinalCost(
+                req.body.cost
             );
-
+        
             res.status(200).json({
-                score: result.score,
-                message: result.message
+                message: result
+            });
+        }
+        catch (error)
+        {
+            if (error instanceof TypeError)
+            {
+                res.status(500).json({
+                    message: error.message
+                });
+            }
+        }
+    }
+
+    // ********************** Exercise 19 ********************** //
+    FeeCalculator(req, res)
+    {
+        try
+        {
+            const result = exercises.FeeCalculator(
+                req.body.capital,
+                req.body.tax,
+                req.body.days
+            );
+        
+            res.status(200).json({
+                message: result
+            });
+        }
+        catch (error)
+        {
+            if (error instanceof TypeError)
+            {
+                res.status(500).json({
+                    message: error.message
+                });
+            }
+        }
+    }
+   
+    // ********************** Exercise 20 ********************** //
+    IPITaxCalculator(req, res)
+    {
+        try
+        {
+            const result = exercises.IPITaxCalculator(
+                req.body.ipi,
+                req.body.items
+            );
+        
+            res.status(200).json({
+                message: result
             });
         }
         catch (error)
