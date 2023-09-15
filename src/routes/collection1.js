@@ -1,36 +1,26 @@
 // Imports
-
 const express = require('express');
-const { SumTwoNumbers } = require('../handlers/1_sum_two_numbers.js');
-const { CalculateMonthlySalary } = require('../handlers/2_monthly_salary.js');
-const { CalculateAverageWeight } = require('../handlers/3_average_weight.js');
-const { ConvertCelsiusToFahrenheit } = require('../handlers/4_convert_to_fahrenheit.js');
-const { ConvertMilesToKilometers } = require('../handlers/5_convert_to_kilometers.js');
-const { ConvertSecondsToTime } = require('../handlers/6_convert_seconds_to_time.js');
-const { ConvertKilometers } = require('../handlers/7_detailed_metric_converter.js');
-const { CreateMultiplicationTable } = require('../handlers/8_multiplication_table.js');
-const { CalcStudentGrades } = require('../handlers/9_calc_student_grade.js');
-const { BmiCalculator } = require('../handlers/10_bmi_calculator.js');
+const CollectionController = require('../controllers/collection1.js');
+
+const controller = new CollectionController();
+const router = express.Router();
 
 
-const api_router = express.Router();
 
-// ********************** Exercise 1 ********************** //
-
-api_router.post('/1', (req, res) => {
-    const result = SumTwoNumbers(
-        req.body.num1,
-        req.body.num2
-    );
-
-    res.status(200).json({
-        message: result
-    });
-});
+router.post('/1', controller.SumTwoNumbers);
+router.post('/2', controller.CalculateMonthlySalary);
+router.post('/3', controller.CalculateAverageWeight);
+router.post('/4', controller.ConvertCelsiusToFahrenheit);
+router.post('/5', controller.ConvertMilesToKilometers);
+router.post('/6', controller.ConvertSecondsToTime);
+router.post('/7', controller.ConvertKilometers);
+router.post('/8', controller.CreateMultiplicationTable);
+router.post('/9', controller.CalcStudentGrades);
+router.post('/10', controller.BmiCalculator);
 
 // ********************** Exercise 2 ********************** //
 
-api_router.post('/2', (req, res) => {
+router.post('/2', (req, res) => {
     const result = CalculateMonthlySalary(
         req.body.salary,
         req.body.hoursWorked
@@ -43,7 +33,7 @@ api_router.post('/2', (req, res) => {
 
 // ********************** Exercise 3 ********************** //
 
-api_router.post('/3', (req, res) => {
+router.post('/3', (req, res) => {
     const result = CalculateAverageWeight(
         req.body.people
     );
@@ -55,7 +45,7 @@ api_router.post('/3', (req, res) => {
 
 // ********************** Exercise 4 ********************** //
 
-api_router.post('/4', (req, res) => {
+router.post('/4', (req, res) => {
     const result = ConvertCelsiusToFahrenheit(
         req.body.celsius
     );
@@ -67,7 +57,7 @@ api_router.post('/4', (req, res) => {
 
 // ********************** Exercise 5 ********************** //
 
-api_router.post('/5', (req, res) => {
+router.post('/5', (req, res) => {
     const result = ConvertMilesToKilometers(
         req.body.miles
     );
@@ -79,7 +69,7 @@ api_router.post('/5', (req, res) => {
 
 // ********************** Exercise 6 ********************** //
 
-api_router.post('/6', (req, res) => {
+router.post('/6', (req, res) => {
     const result = ConvertSecondsToTime(
         req.body.seconds
     );
@@ -94,7 +84,7 @@ api_router.post('/6', (req, res) => {
 
 // ********************** Exercise 7 ********************** //
 
-api_router.post('/7', (req, res) => {
+router.post('/7', (req, res) => {
     const result = ConvertKilometers(
         req.body.km
     );
@@ -108,7 +98,7 @@ api_router.post('/7', (req, res) => {
 
 // ********************** Exercise 8 ********************** //
 
-api_router.post('/8', (req, res) => {
+router.post('/8', (req, res) => {
     const result = CreateMultiplicationTable(
         req.body.number
     );
@@ -120,7 +110,7 @@ api_router.post('/8', (req, res) => {
 
 // ********************** Exercise 9 ********************** //
 
-api_router.post('/9', (req, res) => {
+router.post('/9', (req, res) => {
     const result = CalcStudentGrades(
         req.body.grades
     );
@@ -133,7 +123,7 @@ api_router.post('/9', (req, res) => {
 
 // ********************** Exercise 10 ********************** //
 
-api_router.post('/10', (req, res) => {
+router.post('/10', (req, res) => {
     const result = BmiCalculator(
         req.body.weight,
         req.body.height
