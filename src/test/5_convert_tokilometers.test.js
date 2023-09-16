@@ -1,7 +1,12 @@
 const { describe, expect, it } = require( '@jest/globals');
-const { ConvertMilesToKilometers } = require('../../public/js/5_convert_to_kilometers.js');
+const ExerciseCollection1Services = require('../services/collection1.js');
+
 
 describe('Testing my first exercise', () => {
+
+
+    const exercise = new ExerciseCollection1Services();
+
     //Executed before all tests
     beforeAll(async () => {
         console.info('Starting TDD test with Jest!');
@@ -13,32 +18,32 @@ describe('Testing my first exercise', () => {
 
     // testing a regular number
     it('Should convert miles to kilometers', () => {
-        const result = ConvertMilesToKilometers(1)
-        expect(result).toBe(1.60);
+        const result = exercise.ConvertMilesToKilometers(1)
+        expect(result).toBe(1.61);
     })
 
     // testing a decimal number
     it('Should convert miles to kilometers', () => {
-        const result = ConvertMilesToKilometers(1.3)
+        const result = exercise.ConvertMilesToKilometers(1.3)
         expect(result).toBe(2.09);
     })
 
     // testing a negative number
     it('Should convert miles to kilometers', () => {
-        const result = ConvertMilesToKilometers(-4)
-        expect(result).toBe(-6.43);
+        const result = exercise.ConvertMilesToKilometers(-4)
+        expect(result).toBe(-6.44);
     })
 
     // testing 0
     it('Should convert miles to kilometers', () => {
-        const result = ConvertMilesToKilometers(0)
-        expect(result).toBe(0);
+        const result = exercise.ConvertMilesToKilometers(0)
+        expect(result).toBe(0.00);
     })
 
     // testing a string
     it('Should convert miles to kilometers', () => {
         expect(() => {
-            ConvertMilesToKilometers("batata");
+            exercise.ConvertMilesToKilometers("batata");
         }).toThrow(TypeError);
     })
 }) 

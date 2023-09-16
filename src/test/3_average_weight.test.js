@@ -1,7 +1,12 @@
 const { describe, expect, it } = require( '@jest/globals');
-const { CalculateAverageWeight } = require('../public/js/3_average_weight.js');
+const ExerciseCollection1Services = require('../services/collection1.js');
+
 
 describe('Testing my third exercise', () => {
+
+
+    const exercise = new ExerciseCollection1Services();
+
     //Executed before all tests
     beforeAll(async () => {
         console.info('Starting TDD test with Jest!');
@@ -20,8 +25,8 @@ describe('Testing my third exercise', () => {
             {"weight": 43}
         ]
 
-        const result = CalculateAverageWeight(people)
-        expect(result).toBe(64.5);
+        const result = exercise.CalculateAverageWeight(people)
+        expect(result).toBe(64.50);
     })
 
     // testing decimals numbers
@@ -33,7 +38,7 @@ describe('Testing my third exercise', () => {
             {"weight": 43}
         ]
 
-        const result = CalculateAverageWeight(people)
+        const result = exercise.CalculateAverageWeight(people)
         expect(result).toBe(64.67);
     })
 
@@ -46,8 +51,8 @@ describe('Testing my third exercise', () => {
             {"weight": 43}
         ]
 
-        const result = CalculateAverageWeight(people)
-        expect(result).toBe(33.6);
+        const result = exercise.CalculateAverageWeight(people)
+        expect(result).toBe(33.60);
     })
 
     // testing strings 
@@ -59,7 +64,7 @@ describe('Testing my third exercise', () => {
             {"weight": 43}
         ]
         expect(() => {
-            CalculateAverageWeight(people);
+            exercise.CalculateAverageWeight(people);
         }).toThrow(TypeError);
     })
 
@@ -72,17 +77,17 @@ describe('Testing my third exercise', () => {
             {"price": 43}
         ]
         expect(() => {
-            CalculateAverageWeight(people);
-        }).toThrow(Error);
+            exercise.CalculateAverageWeight(people);
+        }).toThrow(TypeError);
     })
 
     // testing empty array
     it('Should sum all numbers and divide by the total length', () => {
         const people = [
         ]
-
+        
         expect(() => {
-            CalculateAverageWeight(people);
+            exercise.CalculateAverageWeight(people);
         }).toThrow(Error);
     })
 
@@ -91,7 +96,7 @@ describe('Testing my third exercise', () => {
         const people = 34
 
         expect(() => {
-            CalculateAverageWeight(people);
-        }).toThrow(Error);
+            exercise.CalculateAverageWeight(people);
+        }).toThrow(TypeError);
     })
 }) 
