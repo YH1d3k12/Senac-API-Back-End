@@ -1,7 +1,12 @@
 const { describe, expect, it } = require( '@jest/globals');
-const { SumTwoNumbers } = require('../public/js/1_sum_two_numbers.js');
+const ExerciseCollection1Services = require('../services/collection1.js');
+
 
 describe('Testing my first exercise', () => {
+
+
+    const exercise = new ExerciseCollection1Services();
+
     //Executed before all tests
     beforeAll(async () => {
         console.info('Starting TDD test with Jest!');
@@ -13,33 +18,40 @@ describe('Testing my first exercise', () => {
 
     // testing two regular numbers
     it('Should sum two numbers', () => {
-        const result = SumTwoNumbers(1,2)
-        expect(result).toBe(3);
+        const result = exercise.SumTwoNumbers(1,2)
+        expect(result).toBe(3.00);
     })
     
     // testing two decimal numbers
     it('Should sum two numbers', () => {
-        const result = SumTwoNumbers(4.4,3.2)
-        expect(result).toBe(7.6);
+        const result = exercise.SumTwoNumbers(4.4,3.2)
+        expect(result).toBe(7.60);
     })
 
     // testing one decimal and one negative number
     it('Should sum two numbers', () => {
-        const result = SumTwoNumbers(-4 ,3.2)
-        expect(result).toBe(-0.8);
+        const result = exercise.SumTwoNumbers(-4 ,3.2)
+        expect(result).toBe(-0.80);
     })
 
     // trying to pass a string
     it('Should throw a TypeError when passing a string', () => {
         expect(() => {
-            SumTwoNumbers(-4, "batata");
+            exercise.SumTwoNumbers(-4, "batata");
         }).toThrow(TypeError);
     });
 
     // trying to pass a boolean
     it('It treats the boolean as 1 or 0, dont think its ok', () => {
         expect(() => {
-            SumTwoNumbers(true, false);
+            exercise.SumTwoNumbers(true, false);
         }).toThrow(TypeError);
+    });
+
+    // trying to pass an incorrect syntax
+    it('It treats the boolean as 1 or 0, dont think its ok', () => {
+        expect(() => {
+            exercise.SumTwoNumbers(true, aaaaaa, b);
+        }).toThrow(ReferenceError);
     });
 }) 

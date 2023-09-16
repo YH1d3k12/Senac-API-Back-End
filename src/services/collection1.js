@@ -6,7 +6,7 @@ class ExerciseCollection1Services
         if (!isNaN(num1) && !isNaN(num2))
         {
             const result = parseFloat(num1) + parseFloat(num2);
-            return result.toFixed(2);
+            return parseFloat(result.toFixed(2));
         }
         else
         {
@@ -31,7 +31,7 @@ class ExerciseCollection1Services
         if (!isNaN(salary) && !isNaN(hoursWorked))
         {
             const result = parseFloat(salary) * parseFloat(hoursWorked);
-            return result.toFixed(2);
+            return parseFloat(result.toFixed(2));
         }
         else
         {
@@ -58,7 +58,11 @@ class ExerciseCollection1Services
         {
             throw new TypeError("Invalid input data, people is not an array");
         }
-    
+        else if (people.length === 0)
+        {
+            throw new Error("Invalid input data, people array is empty");
+        }
+
         let totalWeight = people.reduce((sum, person) => {
             // Checks if person.weight is a number before calculation
             if (!isNaN(person.weight)) 
@@ -75,7 +79,7 @@ class ExerciseCollection1Services
         const averageWeight = totalWeight / people.length;
 
         // Return the calculated average weight
-        return averageWeight.toFixed(2);
+        return parseFloat(averageWeight.toFixed(2));
     }
 
     // ********************** Exercise 4 ********************** //
@@ -84,7 +88,7 @@ class ExerciseCollection1Services
         if (!isNaN(celsius))
         {
             const result = (9 * parseFloat(celsius) + 160) / 5;
-            return result.toFixed(2);
+            return parseFloat(result.toFixed(2));
         }
         else
         {
@@ -99,7 +103,7 @@ class ExerciseCollection1Services
         if (!isNaN(miles))
         {
             const result = parseFloat(miles) * 1.60934;
-            return result.toFixed(2);
+            return parseFloat(result.toFixed(2));
         }
         else
         {
@@ -182,7 +186,11 @@ class ExerciseCollection1Services
         if (!grades || !Array.isArray(grades)) 
         {
             throw new TypeError("Invalid input data, grades is not an array");
-        };
+        }
+        else if (grades.length === 0)
+        {
+            throw new Error("Invalid input data, people array is empty");
+        }
     
         let totalScore = grades.reduce((sum, grade) => {
             // Checks if grade.score is a number before calculation
