@@ -6,15 +6,34 @@ class ExampleServices
 {
     async GetPessoas()
     {
-        const users = await repositories.GetPessoas(); 
-        return users
+        const users = repositories.GetPessoas(); 
+        return users;
     }
 
-    async CreatePessoas(nome, email, senha)
+    async GetPessoaById(id)
     {
-        const result = await repositories.CreatePessoas(nome, email, senha);
+        const user = repositories.GetPessoaById(id); 
+        return user;
+    }
+
+    async CreatePessoa(data)
+    {
+        const result = repositories.CreatePessoa(data);
         return result;
     }
+
+    async UpdatePessoa(id, data)
+    {
+        const result = repositories.UpdatePessoa(id, data);
+        return result;
+    }
+
+    async DeletePessoa(id)
+    {
+        const result = repositories.DeletePessoa(id);
+        return result;
+    }
+
 }
 
 module.exports = ExampleServices;
