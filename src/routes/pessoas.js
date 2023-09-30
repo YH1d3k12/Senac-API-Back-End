@@ -5,6 +5,9 @@ const controller = new ExampleController();
 const router = express.Router();
 
 router.get('/', controller.GetPessoas);
-router.post('/', controller.CreatePessoas);
+router.get('/:id', controller.GetPessoaById);
+router.post('/', controller.CreatePessoa);
+router.put('/:id', controller.UpdatePessoa);
+router.delete('/:id', controller.DeletePessoa);
 
 module.exports = router;
