@@ -1,13 +1,15 @@
 const express = require('express');
 const ExampleController = require('../controllers/pessoas.js');
+const authMiddleware = require('../middleware/auth.js');
 
 const controller = new ExampleController();
 const router = express.Router();
 
-router.get('/', controller.GetPessoas);
-router.get('/:id', controller.GetPessoaById);
-router.post('/', controller.CreatePessoa);
-router.put('/:id', controller.UpdatePessoa);
-router.delete('/:id', controller.DeletePessoa);
+router.post('/login', controller.Login);
+router.get('/', authMiddleware, controller.GetPessoas);
+router.get('/:id', authMiddleware, controller.GetPessoaById);
+router.post('/', authMiddleware, controller.CreatePessoa);
+router.put('/:id', authMiddleware, controller.UpdatePessoa);
+router.delete('/:id', authMiddleware, controller.DeletePessoa);
 
 module.exports = router;
